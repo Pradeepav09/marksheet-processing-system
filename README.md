@@ -20,8 +20,10 @@ your_flask_project/
 └── README.md                       # Project documentation
 ```
 ---
-Step-by-Step Integration
+Step-by-Step Integration:
+
 1. File Replacement
+   
 Replace your existing files with the updated versions:
 
 Backend Files:
@@ -41,6 +43,7 @@ Replace static/css/custom.css with the content from flask_custom.css
 Replace static/js/main.js with the content from flask_main.js
 
 2. Key Changes Made
+   
 Backend Changes (app.py):
 ✅ Fixed route paths: Now supports both /process/<type> and legacy /api/process
 
@@ -57,6 +60,7 @@ Backend Changes (app.py):
 ✅ Improved response format to match frontend expectations
 
 Processor Changes (processor.py):
+
 ✅ Added direct image file processing (JPG, PNG, not just PDFs)
 
 ✅ Enhanced OCR preprocessing for better text extraction
@@ -96,11 +100,14 @@ opencv-python==4.8.1.78
 pytesseract==0.3.10
 pdf2image==1.16.3
 numpy==1.24.3
+
 Install dependencies:
 
-bash
-pip install -r requirements.txt
+  -> pip install -r requirements.txt
+
+
 4. System Dependencies
+   
 You'll also need to install these system-level dependencies:
 
 Windows:
@@ -111,19 +118,18 @@ Download Poppler from: https://poppler.freedesktop.org/
 
 macOS:
 
-bash
 brew install tesseract
 brew install poppler
 Linux (Ubuntu/Debian):
 
-bash
 sudo apt-get install tesseract-ocr
 sudo apt-get install poppler-utils
+
 5. Configuration
 Environment Variables (Optional)
+
 Create a .env file:
 
-text
 FLASK_ENV=development
 FLASK_DEBUG=True
 MAX_FILE_SIZE=10485760  # 10MB in bytes
@@ -148,6 +154,7 @@ bash
 export FLASK_APP=updated_app.py
 export FLASK_ENV=production
 flask run --host=0.0.0.0 --port=5000
+
 7. API Endpoints
 The system now provides these endpoints:
 
