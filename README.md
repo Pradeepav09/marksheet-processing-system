@@ -2,7 +2,7 @@ Complete Flask Marksheet Processing System - Setup Guide
 Directory Structure
 Your Flask project should be organized as follows:
 
-text
+```
 your_flask_project/
 ├── updated_app.py                  # Main Flask application (your new app.py)
 ├── improved_processor.py           # Enhanced processor (your new processor.py)
@@ -18,6 +18,8 @@ your_flask_project/
 ├── output/                         # Directory for processed files (auto-created)
 ├── requirements.txt                # Python dependencies
 └── README.md                       # Project documentation
+```
+---
 Step-by-Step Integration
 1. File Replacement
 Replace your existing files with the updated versions:
