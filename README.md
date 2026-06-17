@@ -22,7 +22,7 @@ your_flask_project/
 ---
 Step-by-Step Integration:
 
-1. File Replacement
+**1. File Replacement**
    
 Replace your existing files with the updated versions:
 
@@ -42,7 +42,7 @@ Replace static/css/custom.css with the content from flask_custom.css
 
 Replace static/js/main.js with the content from flask_main.js
 
-2. Key Changes Made
+**2. Key Changes Made**
    
 Backend Changes (app.py):
 
@@ -75,6 +75,7 @@ Processor Changes (processor.py):
 ✅ Enhanced image optimization (contrast, brightness, sharpening)
 
 Frontend Changes:
+
 ✅ Converted from Django to Flask template syntax
 
 ✅ Updated JavaScript to work with Flask routes
@@ -87,7 +88,8 @@ Frontend Changes:
 
 ✅ Improved error handling and user feedback
 
-3. Installation Requirements
+**3. Installation Requirements**
+   
 Update your requirements.txt:
 
 text
@@ -107,7 +109,7 @@ Install dependencies:
   -> pip install -r requirements.txt
 
 
-4. System Dependencies
+**4. System Dependencies**
    
 You'll also need to install these system-level dependencies:
 
@@ -126,7 +128,8 @@ Linux (Ubuntu/Debian):
 sudo apt-get install tesseract-ocr
 sudo apt-get install poppler-utils
 
-5. Configuration
+**5. Configuration**
+
 Environment Variables (Optional)
 
 Create a .env file:
@@ -146,7 +149,8 @@ Auto-creation of upload and output directories
 
 CORS enabled for frontend communication
 
-6. Running the Application
+**6. Running the Application**
+
 Development Mode:
 bash
 python updated_app.py
@@ -156,7 +160,8 @@ export FLASK_APP=updated_app.py
 export FLASK_ENV=production
 flask run --host=0.0.0.0 --port=5000
 
-7. API Endpoints
+**7. API Endpoints**
+
 The system now provides these endpoints:
 
 Web Interface:
@@ -183,14 +188,19 @@ GET /api/download/<filename> - Legacy download endpoint
 
 POST /api/auth/login - Authentication endpoint
 
-8. Request/Response Format
+**8. Request/Response Format**
+
 Processing Request:
+```
 javascript
 FormData {
   uploaded_file: File,
   marksheet_type: "10th" | "12th" | "semester"
 }
+```
+
 Success Response:
+```
 json
 {
   "success": true,
@@ -207,13 +217,18 @@ json
     }
   ]
 }
+```
+
 Error Response:
+```
 json
 {
   "success": false,
   "message": "Invalid file type. Please upload PDF, JPG, JPEG, or PNG files only."
 }
-9. Features
+```
+
+**9. Features**
 Frontend Features:
 📁 Drag & drop file upload
 
@@ -230,6 +245,7 @@ Frontend Features:
 🎨 Professional UI with smooth animations
 
 Backend Features:
+
 🔒 File type and size validation
 
 🆔 Unique filename generation
@@ -244,8 +260,10 @@ Backend Features:
 
 🔄 Backward compatibility with existing API
 
-10. Testing
+**10. Testing**
+
 Test the Web Interface:
+
 Start the Flask server: python updated_app.py
 
 Open browser to: http://127.0.0.1:5000
@@ -255,14 +273,23 @@ Upload sample marksheet files
 Verify processing and download functionality
 
 Test API Endpoints:
+
+```
 bash
 # Test health check
 curl http://127.0.0.1:5000/api/health
+```
 
 # Test file upload (example)
+
+```
 curl -X POST -F "uploaded_file=@sample_marksheet.pdf" -F "marksheet_type=10th" http://127.0.0.1:5000/process/10th
-11. Troubleshooting
+```
+
+**11. Troubleshooting**
+
 Common Issues:
+
 "Tesseract not found" error:
 
 Ensure Tesseract is installed and in system PATH
@@ -291,7 +318,8 @@ Verify file type (PDF, JPG, JPEG, PNG only)
 
 Ensure proper form encoding (multipart/form-data)
 
-12. Customization
+**12. Customization**
+
 Adding New Marksheet Types:
 Add new route in updated_app.py
 
@@ -311,6 +339,7 @@ Modify OCR configurations in improved_processor.py
 
 Adjust preprocessing parameters for better accuracy
 
+---
 Support
 If you encounter any issues:
 
