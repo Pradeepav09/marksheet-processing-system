@@ -45,6 +45,7 @@ Replace static/js/main.js with the content from flask_main.js
 2. Key Changes Made
    
 Backend Changes (app.py):
+
 ✅ Fixed route paths: Now supports both /process/<type> and legacy /api/process
 
 ✅ Fixed field names: Now accepts uploaded_file from the frontend
